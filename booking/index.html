@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Self-Hosted Booking | VPROSPA</title>
+    <meta name="description" content="Self-hosted booking entry point for VPRO Beauty Salon & Spa appointments.">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <div class="topbar"><div class="topbar__inner"><span>165 Speedwell Ave, Morris Plains, NJ 07950</span><a href="tel:9088188869">Call 908-818-8869</a></div></div>
+    <header class="nav"><a class="brand" href="../"><img src="../assets/vpro-logo-v.png" alt="VPRO Beauty Salon & Spa logo"><span>VPROSPA</span></a><nav class="nav__links"><a href="../services/">Services</a><a href="../store/">Store</a><a href="../gift-card/">Gift Card</a></nav><a class="btn btn--dark" href="#booking-form">Start Booking</a></header>
+    <main>
+      <section class="page-hero"><div class="wrap"><div class="eyebrow">Self-Hosted Booking</div><h1>Request your VPRO appointment directly.</h1><p>This page is the self-hosted booking destination. The static prototype stores no data; connect the form to the production scheduling API when ready.</p></div></section>
+      <section class="section">
+        <div class="wrap split">
+          <form id="booking-form" class="panel booking-form">
+            <label>Service
+              <select id="service" name="service">
+                <option value="consultation">Consultation</option>
+                <option value="haircut">Haircut & Styling</option>
+                <option value="head-spa">Japanese Head Spa</option>
+                <option value="hydrafacial">HydraFacial</option>
+                <option value="gift-card">Gift Card</option>
+                <option value="massage">Massage</option>
+                <option value="lashes">Lashes & Brows</option>
+                <option value="waxing">Waxing</option>
+              </select>
+            </label>
+            <label>Preferred Date<input type="date" name="date"></label>
+            <label>Name<input type="text" name="name" autocomplete="name" required></label>
+            <label>Phone<input type="tel" name="phone" autocomplete="tel" required></label>
+            <label class="full">Notes<textarea name="notes" rows="5" placeholder="Tell us your goals, preferred provider, timing, or gift card amount."></textarea></label>
+            <button class="btn btn--dark full" type="submit">Submit Booking Request</button>
+            <p id="booking-notice" class="full" hidden></p>
+          </form>
+          <div class="panel">
+            <div class="eyebrow">Main Paths</div>
+            <h3>Popular appointments</h3>
+            <div class="price-list">
+              <div class="price-item"><strong>Haircut & Styling</strong><span>Book for quote</span></div>
+              <div class="price-item"><strong>Express Head Spa</strong><span>$85</span></div>
+              <div class="price-item"><strong>Classic Head Spa</strong><span>$125</span></div>
+              <div class="price-item"><strong>Rejuvenating Head Spa</strong><span>$185</span></div>
+              <div class="price-item"><strong>HydraFacial</strong><span>Book for quote</span></div>
+            </div>
+            <p>For urgent appointment questions, call VPRO Beauty Salon & Spa at 908-818-8869.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><div class="wrap footer__grid"><div><strong>VPRO Beauty Salon & Spa</strong><br>Recover. Revive. Rejuvenate.</div><div>165 Speedwell Ave<br>Morris Plains, NJ 07950<br>908-818-8869</div><div>Self-hosted booking route<br>/booking/</div></div></footer>
+    <script src="../main.js"></script>
+  </body>
+</html>

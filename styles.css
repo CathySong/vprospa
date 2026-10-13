@@ -276,10 +276,16 @@ h1 {
   margin-bottom: 30px;
 }
 
+.section__head > div {
+  display: grid;
+  gap: 12px;
+}
+
 .section__head h2 {
   max-width: 720px;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(36px, 5.6vw, 58px);
+  line-height: 1.04;
 }
 
 .section__head p {
@@ -567,6 +573,7 @@ h1 {
 
   .hero__grid {
     min-height: auto;
+    max-height: none;
   }
 
   .hero__media img {
@@ -637,6 +644,14 @@ h1 {
 
   .section__head {
     display: block;
+  }
+
+  .section__head > div {
+    gap: 10px;
+  }
+
+  .section__head p {
+    margin-top: 14px;
   }
 
   .feature__panel,

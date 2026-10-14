@@ -17,9 +17,12 @@ const calEmbed = document.querySelector("#cal-booking");
 
 if (calEmbed) {
   const calLink = (calEmbed.dataset.calLink || "").trim();
+  const isExternalCalLink = /^https:\/\/app\.cal\.com\/links\//.test(calLink);
 
   if (!calLink) {
     calEmbed.dataset.calStatus = "pending";
+  } else if (isExternalCalLink) {
+    calEmbed.dataset.calStatus = "external";
   } else {
     calEmbed.dataset.calStatus = "active";
 

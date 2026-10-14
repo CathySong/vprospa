@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "build": "vite build",
     "dev": "vite --host 127.0.0.1",
-    "preview": "vite --host 127.0.0.1",
+    "preview": "vite preview --host 127.0.0.1",
     "check": "node scripts/check-links.mjs"
   },
   "devDependencies": {

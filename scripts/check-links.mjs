@@ -17,10 +17,11 @@ walk(root);
 
 const required = [
   "VPRO Beauty Salon & Spa",
-  "booking/",
   "165 Speedwell Ave",
   "908-818-8869"
 ];
+
+const bookingLink = "https://cal.com/cozyfamily/vpro-consultation";
 
 let failed = false;
 for (const file of htmlFiles) {
@@ -30,6 +31,11 @@ for (const file of htmlFiles) {
       console.error(`${file} is missing ${token}`);
       failed = true;
     }
+  }
+
+  if (!html.includes(bookingLink) && !html.includes("booking/")) {
+    console.error(`${file} is missing a booking destination`);
+    failed = true;
   }
 }
 

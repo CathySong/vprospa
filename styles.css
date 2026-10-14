@@ -611,6 +611,10 @@ h1 {
   background: var(--white);
 }
 
+.cal-inline--compact {
+  min-height: 360px;
+}
+
 .cal-inline iframe {
   min-height: 720px;
 }

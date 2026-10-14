@@ -3,60 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Self-Hosted Booking | VPROSPA</title>
-    <meta name="description" content="Self-hosted booking entry point for VPRO Beauty Salon & Spa appointments.">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@7.1.2/skeleton.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@7.1.2/themes/monarch/theme.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@7.1.2/themes/monarch/palettes/purple.css">
+    <title>Book Online | VPROSPA</title>
+    <meta name="description" content="Book a VPRO Beauty Salon & Spa appointment online through Cal.com.">
     <link rel="icon" href="../assets/vpro-logo-v.png">
     <link rel="stylesheet" href="../styles.css">
   </head>
   <body>
     <div class="topbar"><div class="topbar__inner"><span>165 Speedwell Ave, Morris Plains, NJ 07950</span><a href="tel:9088188869">Call 908-818-8869</a></div></div>
-    <header class="nav"><a class="brand" href="../"><img src="../assets/vpro-logo-v.png" alt="VPRO Beauty Salon & Spa logo"><span>VPROSPA</span></a><nav class="nav__links"><a href="../services/">Services</a><a href="../store/">Store</a><a href="../gift-card/">Gift Card</a></nav><a class="btn btn--dark" href="#booking-form">Start Booking</a></header>
+    <header class="nav"><a class="brand" href="../"><img src="../assets/vpro-logo-v.png" alt="VPRO Beauty Salon & Spa logo"><span>VPROSPA</span></a><nav class="nav__links"><a href="../services/">Services</a><a href="../store/">Store</a><a href="../gift-card/">Gift Card</a></nav><a class="btn btn--dark" href="#cal-booking">Start Booking</a></header>
     <main>
-      <section class="page-hero"><div class="wrap"><div class="eyebrow">Self-Hosted Booking</div><h1>Request your VPRO appointment directly.</h1><p>Choose a service, pick a preferred day from the calendar, and send your appointment request. The static prototype stores no data; connect the form to the production scheduling API when ready.</p></div></section>
+      <section class="page-hero"><div class="wrap"><div class="eyebrow">Online Booking</div><h1>Book your VPRO appointment directly.</h1><p>This page is ready for a Cal.com scheduler. Add VPROSPA's live Cal.com event link to enable online booking.</p></div></section>
       <section class="section">
-        <div class="wrap booking-calendar-layout">
-          <div class="panel calendar-panel">
-            <div class="eyebrow">Appointment Calendar</div>
-            <h3>Find a day that fits your schedule.</h3>
-            <p>Select an open request window below. The date will sync into the booking form automatically.</p>
-            <div id="appointment-calendar" aria-label="VPRO appointment request calendar"></div>
-            <div class="calendar-legend" aria-label="Calendar legend">
-              <span><i class="legend-open"></i>Open request window</span>
-              <span><i class="legend-focus"></i>Popular service focus</span>
-              <span><i class="legend-closed"></i>Closed</span>
+        <div class="wrap cal-booking-layout">
+          <div class="panel cal-panel">
+            <div class="eyebrow">Cal.com Booking</div>
+            <h3>Pick a service time online.</h3>
+            <p>This embedded scheduler will connect to the VPROSPA Cal.com event once the live event link is set.</p>
+            <div id="cal-booking" class="cal-inline" data-cal-link="" aria-label="VPROSPA Cal.com booking calendar">
+              <div class="cal-fallback">
+                <strong>Cal.com scheduler ready</strong>
+                <span>Add the live Cal.com event link to activate online booking. For now, call 908-818-8869.</span>
+              </div>
             </div>
+            <p class="cal-note">Setup note: update <code>data-cal-link</code> to the real Cal.com event link before launch.</p>
           </div>
-          <form id="booking-form" class="panel booking-form">
-            <label>Service
-              <select id="service" name="service">
-                <option value="consultation">Consultation</option>
-                <option value="haircut">Haircut & Styling</option>
-                <option value="head-spa">Japanese Head Spa</option>
-                <option value="hydrafacial">HydraFacial</option>
-                <option value="gift-card">Gift Card</option>
-                <option value="massage">Massage</option>
-                <option value="lashes">Lashes & Brows</option>
-                <option value="waxing">Waxing</option>
-              </select>
-            </label>
-            <label>Preferred Date<input type="date" name="date"></label>
-            <label>Preferred Time
-              <select name="time">
-                <option value="">Flexible</option>
-                <option>Morning</option>
-                <option>Afternoon</option>
-                <option>Evening</option>
-              </select>
-            </label>
-            <label>Name<input type="text" name="name" autocomplete="name" required></label>
-            <label>Phone<input type="tel" name="phone" autocomplete="tel" required></label>
-            <label class="full">Notes<textarea name="notes" rows="5" placeholder="Tell us your goals, preferred provider, timing, or gift card amount."></textarea></label>
-            <button class="btn btn--dark full" type="submit">Submit Booking Request</button>
-            <p id="booking-notice" class="full" hidden></p>
-          </form>
           <div class="panel">
             <div class="eyebrow">Main Paths</div>
             <h3>Popular appointments</h3>
@@ -72,9 +42,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer"><div class="wrap footer__grid"><div><strong>VPRO Beauty Salon & Spa</strong><br>Recover. Revive. Rejuvenate.</div><div>165 Speedwell Ave<br>Morris Plains, NJ 07950<br>908-818-8869</div><div>Self-hosted booking route<br>/booking/</div></div></footer>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@7.1.2/all/global.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@7.1.2/themes/monarch/global.min.js"></script>
+    <footer class="footer"><div class="wrap footer__grid"><div><strong>VPRO Beauty Salon & Spa</strong><br>Recover. Revive. Rejuvenate.</div><div>165 Speedwell Ave<br>Morris Plains, NJ 07950<br>908-818-8869</div><div>Online booking route<br>/booking/</div></div></footer>
     <script src="../main.js"></script>
   </body>
 </html>

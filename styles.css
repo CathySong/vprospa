@@ -583,172 +583,65 @@ h1 {
   gap: 16px;
 }
 
-.booking-calendar-layout {
+.cal-booking-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.28fr) minmax(320px, 0.8fr);
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.72fr);
   gap: 22px;
   align-items: start;
 }
 
-.booking-calendar-layout .booking-form {
-  grid-column: 2;
-}
-
-.booking-calendar-layout > .panel:last-child {
-  grid-column: 2;
-}
-
-.calendar-panel {
-  grid-row: span 2;
+.cal-panel {
   overflow: hidden;
 }
 
-.calendar-panel h3 {
+.cal-panel h3 {
   margin: 10px 0 8px;
   font-size: 28px;
 }
 
-.calendar-panel p {
+.cal-panel p {
   color: var(--muted);
 }
 
-#appointment-calendar {
+.cal-inline {
+  min-height: 720px;
   margin-top: 22px;
-}
-
-#appointment-calendar [role="heading"] {
-  font-size: 22px;
-  font-weight: 900;
-  line-height: 1.15;
-}
-
-#appointment-calendar button {
-  font-family: inherit;
-  font-weight: 900;
-}
-
-#appointment-calendar table {
-  font-size: 13px;
-}
-
-#appointment-calendar .fc {
-  color: var(--ink);
-  font-family: inherit;
-}
-
-#appointment-calendar .fc .fc-toolbar {
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 18px;
-}
-
-#appointment-calendar .fc .fc-toolbar-title {
-  font-size: 22px;
-  line-height: 1.15;
-}
-
-#appointment-calendar .fc .fc-button {
+  overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 999px;
   background: var(--white);
-  color: var(--ink);
-  box-shadow: none;
-  font: inherit;
-  font-size: 13px;
-  font-weight: 900;
-  padding: 8px 12px;
-  text-transform: none;
 }
 
-#appointment-calendar .fc .fc-button-primary:not(:disabled).fc-button-active,
-#appointment-calendar .fc .fc-button-primary:not(:disabled):active,
-#appointment-calendar .fc .fc-button-primary:hover {
-  border-color: var(--charcoal);
-  background: var(--charcoal);
-  color: var(--white);
+.cal-inline iframe {
+  min-height: 720px;
 }
 
-#appointment-calendar .fc .fc-scrollgrid,
-#appointment-calendar .fc th,
-#appointment-calendar .fc td {
-  border-color: var(--line);
-}
-
-#appointment-calendar .fc .fc-col-header-cell-cushion,
-#appointment-calendar .fc .fc-daygrid-day-number {
-  color: #3d3935;
-  font-weight: 900;
-}
-
-#appointment-calendar .fc .fc-day-today {
-  background: rgba(183, 137, 83, 0.1);
-}
-
-#appointment-calendar .fc .fc-event {
-  border: 0;
-  border-radius: 0;
-  padding: 2px 4px;
-  background: var(--sage);
-  color: var(--white);
-  font-size: 12px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-#appointment-calendar .fc .fc-event.service-focus {
-  background: var(--gold);
-}
-
-#appointment-calendar .fc .fc-event.closed-day {
-  background: #d8d1c8;
-  color: #5d5853;
-  cursor: default;
-}
-
-#appointment-calendar [data-booking-event] {
-  border-radius: 6px;
-  font-weight: 800;
-}
-
-#appointment-calendar [data-booking-event="open"] {
-  cursor: pointer;
-}
-
-#appointment-calendar [data-booking-event="focus"] {
-  cursor: pointer;
-}
-
-#appointment-calendar [data-booking-event="closed"] {
-  opacity: 0.72;
-  cursor: default;
-}
-
-.calendar-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 16px;
-  margin-top: 16px;
+.cal-fallback {
+  min-height: 480px;
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  padding: 28px;
   color: var(--muted);
+  text-align: center;
+}
+
+.cal-fallback strong {
+  display: block;
+  color: var(--ink);
+  font-size: 24px;
+}
+
+.cal-note {
+  margin: 14px 0 0;
   font-size: 13px;
-  font-weight: 800;
 }
 
-.calendar-legend span {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
+.cal-note code {
+  padding: 2px 5px;
+  border: 1px solid var(--line);
+  background: var(--soft);
+  color: var(--sage);
 }
-
-.calendar-legend i {
-  width: 12px;
-  height: 12px;
-  display: inline-block;
-  border-radius: 50%;
-}
-
-.legend-open { background: #6f56a8; }
-.legend-focus { background: #b78953; }
-.legend-closed { background: #d8d1c8; }
 
 .booking-form label {
   display: grid;
@@ -788,20 +681,13 @@ h1 {
   .hero__grid,
   .feature,
   .split,
-  .booking-calendar-layout,
+  .cal-booking-layout,
   .footer__grid {
     grid-template-columns: 1fr;
   }
 
   .trust-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .booking-calendar-layout .booking-form,
-  .booking-calendar-layout > .panel:last-child,
-  .calendar-panel {
-    grid-column: auto;
-    grid-row: auto;
   }
 
   .hero__grid {
@@ -872,14 +758,9 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  #appointment-calendar .fc .fc-toolbar {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  #appointment-calendar .fc .fc-toolbar-title {
-    font-size: 20px;
-    text-align: center;
+  .cal-inline,
+  .cal-inline iframe {
+    min-height: 680px;
   }
 
   .section {
